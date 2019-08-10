@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>pulchronomics</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb
+}
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0"><center>颜值经济学</center></h1>
+
+<blockquote>
+<p><center><em>Beauty Pays: Why Attractive People Are More Successful</em></center>
+<center>by <u>Daniel S. Hamermesh</u></center> 
+<font face="Kai"><center>摘记于2019年8月，略浮夸，但背后不少是已发表和未发表的研究</center></font></p>
+</blockquote>
+
+<p><font face="Kai"><center>邹宏威 Hongwei Zou</center></font></p>
+
+<h3 id="toc_1"><strong><em>CHAPTER 1</em></strong> &nbsp; 颜值经济学导论</h3>
+
+<ul>
+<li>经济学研究稀缺，以及稀缺如何影响行为激励。</li>
+<li>颜值经济学之所以得以成立，是因为美是稀缺的，或者说稀缺才是一种美。</li>
+<li>颜值经济学是经济学帝国主义的产物，是经济学与社会心理学的颜值研究的交叉。</li>
+</ul>
+
+<h3 id="toc_2"><strong><em>CHAPTER 2</em></strong> &nbsp; 情人眼里出西施？</h3>
+
+<ul>
+<li>颜值真的无法度量吗？经济学家用他人的主观评价（1-5或者1-10的评分）度量颜值。</li>
+<li>美与不美，人各有论，但只是小异，颜值的一致度量是可能的。</li>
+<li>人类对于美可能存在一些基本的共同理解，例如对称性。</li>
+<li>人往往不太愿意给出较低的颜值评分，更多的评分集中在中间水平及以上。</li>
+<li>韶华易逝，红颜易老，即使在被告知考虑年龄的情况下，年轻人比老年人的颜值评分也倾向于更高。</li>
+<li>年轻时的高颜值者，老去以后也是高颜值者。</li>
+<li>衣着、打扮、甚至高成本的整容，并不能显著提高颜值，我们生来如此，大体也即是如此。</li>
+<li>人对于女生比男生的颜值看法更不一致（分布也更分散），年龄对于女生颜值评分的下降也来的更苛刻。</li>
+</ul>
+
+<h3 id="toc_3"><strong><em>CHAPTER 3</em></strong> &nbsp; 颜值与雇员</h3>
+
+<ul>
+<li>市场眷顾美丽，惩罚丑陋。颜值影响收入，但只是影响因素中的一小部分。</li>
+<li>企业观察工人真实生产率的不确定性，随着年龄和工作年限往往在下降，颜值对工人收入的影响也可能会下降。</li>
+<li>但颜值本身可能会有利于技能积累，从而随着年龄和工作年限的增加，颜值对工人收入的影响也可能会增加。</li>
+<li>颜值的经济效应，有待更精确的因果识别，例如随机毁容，但在伦理和实践上均不可行。</li>
+</ul>
+
+<h3 id="toc_4"><strong><em>CHAPTER 4</em></strong> &nbsp; 颜值与职业</h3>
+
+<ul>
+<li>Beauty Matters！无论是对于妓女，律师，政治家，还是企业高管，等职业。</li>
+<li>颜值改变人们的职业选择。在每个职业中颜值也层次不齐，但好看的人总是赚的更多。</li>
+</ul>
+
+<h3 id="toc_5"><strong><em>CHAPTER 5</em></strong> &nbsp; 颜值与雇主</h3>
+
+<ul>
+<li>高颜值的雇员可能会提高企业的收入，甚至是利润。雇佣高颜值的员工本身也是成本。高颜值的CEO也会给公司带来增益。</li>
+<li>由颜值带来正利润的企业如何存在？不理性或不完全信息；专用型人力资本。</li>
+<li>颜值水平不同的雇员存在比较优势，可能促使多样化颜值的雇佣策略。</li>
+<li>成为行业第一个颜值取向的雇佣策略的企业，否则颜值的利润秘密迟早会被发现。</li>
+</ul>
+
+<h3 id="toc_6"><strong><em>CHAPTER 6</em></strong> &nbsp; 颜值的机制：外貌主义还是生产效应？</h3>
+
+<ul>
+<li>市场对颜值的眷顾，可能来自于歧视（颜控，外貌主义），也可能是因为颜值本身具有生产力效应。</li>
+<li>歧视可能是消费者歧视、雇主歧视和雇员歧视，还有可能是统计性歧视（此处省略Borjas劳动经济学教材数千言）。</li>
+<li>颜值的生产力效应，可能只是对于单个经济主体有意义的，例如提高某个企业的销量甚至利润。但也可能最终的社会生产力净效应为负，因为高颜值者的眷顾是低颜值者的代价。</li>
+<li>颜值机制的源头？真正的敌人只有我们自己。</li>
+</ul>
+
+<h3 id="toc_7"><strong><em>CHAPTER 7</em></strong> &nbsp; 颜值与朋友、家庭和借贷的市场</h3>
+
+<ul>
+<li>朋友、家庭的市场较为特殊，涉及的是非货币的交换。</li>
+<li>时间是稀缺的，友情意味着时间互换，以我之岁月换取你之时光。</li>
+<li>缔结婚姻的配偶双方的匹配，是在互换彼此的承诺，承诺「海角天涯、地老天荒」的陪伴，共同生活、相互关照，甚至共享基因传递给下一代，而后者必然关乎颜值。</li>
+<li>美女的朋友是美女，帅哥的朋友是帅哥，美女也会匹配帅哥。但是，也可以颜值换才华，高颜值者可能与低颜值但高才华者匹配。</li>
+<li>性别比（女比男）更高的大学，女生的颜值更高（更用心打扮）。</li>
+<li>相对而言，女生看重男生的才华（看钱），男生看重女生的颜值（看脸）。</li>
+<li>约会的最终目的是结婚，在经济学家的眼里，和工作搜寻的最终目的是一份长期雇佣的工作没什么不同。</li>
+<li>长得丑并不是单身的好理由，我们最终都会找到各自的归宿。低颜值和高颜值者的结婚率并没有显著差异。</li>
+<li>长的好看，借钱好办。</li>
+</ul>
+
+<h3 id="toc_8"><em>CHAPTER 8</em> &nbsp; 以法之名，保护丑陋</h3>
+
+<ul>
+<li>丑陋者会因为想受到法律或政策保护，而主动承认自己的丑陋吗？如果承认丑陋的潜在获益是终生的收入补贴呢？</li>
+<li>基于种族和性别的歧视，与基于颜值的歧视大同小异。但是否保护丑陋往往是一个政治问题。</li>
+<li>丑陋是一种残疾？但在不远的将来，立法保护是可能的，尤其是针对那些在颜值分布极低端的人，无论是先天还是后天的。更有可能的是，体现为判例，特别是作为美国残疾人法案（ADA）的保护范围扩充项目。</li>
+<li>但对于丑陋者的保护，无论是经济上还是政治上，均可能挤出对其他少数群体的保护，政策上需要谨慎。</li>
+</ul>
+
+<h3 id="toc_9"><em>CHAPTER 9</em> &nbsp; 颜值缺陷者的未来</h3>
+
+<ul>
+<li>颜值和幸福总是相伴。</li>
+<li>美貌固然肤浅，丑陋却能深入骨髓。</li>
+<li>随着收入水平的变化，可能美的标准也在发生改变。</li>
+<li>降低失业率，让丑陋者在社会经济生活中司空见惯，从而摆脱颜值诅咒的「低水平均衡」。</li>
+<li>如果我长得丑，我还会有希望吗？答案：NO AND YES。</li>
+<li>的确，丑陋会伤害我们，并将一直伤害我们。颜值这种事，往往是命中注定的，但很多其他事情不也一样吗？况且丑陋并非一个关键的劣势，也并非人力无法克服的，更不该成为一个令你溃退的精神负担。</li>
+</ul>
+
+
+
+<script type="text/x-mathjax-config">
+(function () {
+
+MathJax.Hub.Config({
+	'showProcessingMessages': false,
+	'messageStyle': 'none'
+});
+
+if (typeof MathJaxListener !== 'undefined') {
+	MathJax.Hub.Register.StartupHook('End', function () {
+		MathJaxListener.invokeCallbackForKey_('End');
+	});
+}
+
+})();
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+</body>
+
+</html>
